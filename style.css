@@ -63,7 +63,7 @@ body{
 .progress{
     background-color: #fe8daad4;
     border-radius: 5px;
-    width: 50%;
+    width: 0%;
     height: 100%;
     transition: width 0.1s linear;
 }
@@ -74,12 +74,13 @@ body{
 
 #repeat{
     font-size: 0.8rem;
-    margin-left: 100px;
+    margin-left: 5.6rem;
     cursor: pointer;
 }
 
 .timer{
     font-size: 1rem;
+    font-weight: bold;
     float: right;
 }
 
@@ -121,6 +122,7 @@ body{
     padding: 10px;
     margin: 0 20px;
     border: 0;
+    font-size: 2    0px;
     color: rgb(255, 133, 102,0.7);
     background-color: #fff;
     cursor: pointer;
