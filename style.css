@@ -29,6 +29,60 @@ body{
     z-index: 10;
 }
 
+.music-info{
+    background-color: rgb(255, 255, 255,0.3);
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: calc(100% - 55px);
+    padding: 10px 10px 10px 148px;
+    transform: translateY(0%);
+    transition: transform 0.3s ease-in, opacity 0.2s ease-in;
+    opacity:0;
+}
+
+.music-info h4{
+    margin: 0;
+}
+
+.music-container.play .music-info{
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.progress-container{
+    margin: 10px 0;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.progress{
+    background-color: #fe8daad4;
+    border-radius: 5px;
+    width: 50%;
+    height: 100%;
+    transition: width 0.1s linear;
+}
+
+.meta-container{
+    width: 100%;
+}
+
+#repeat{
+    font-size: 0.8rem;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+.timer{
+    font-size: 1rem;
+    float: right;
+}
+
 .image-container{
     position: relative;
     width: 100px;
@@ -76,3 +130,6 @@ body{
     font-size: 30px;
     color: rgb(228 123 96 / 80%);
 }
+
+ /* Image animation left for cover image */
+ /* Add progress bar */
