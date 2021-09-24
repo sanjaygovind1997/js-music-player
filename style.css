@@ -6,8 +6,6 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    /* background-color: rgb(255, 163, 102); */
-    /* background-color: #003399; */
     background-image: linear-gradient(90deg,rgb(255, 163, 102,0.4) 8%,#ffffff 92%);
     height: 100vh;
     margin: 0;
@@ -38,8 +36,8 @@ body{
     width: calc(100% - 55px);
     padding: 10px 10px 10px 148px;
     transform: translateY(0%);
-    transition: transform 0.3s ease-in, opacity 0.2s ease-in;
     opacity:0;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in;
 }
 
 .music-info h4{
@@ -91,7 +89,7 @@ body{
 
 .image-container::after{
     content: '';
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     width: 20px;
     height: 20px;
     position: absolute;
@@ -109,6 +107,12 @@ body{
     bottom: 0;
     left: 0;
     object-fit: cover;
+    animation: rotate 2s linear infinite;
+    animation-play-state: paused;
+}
+
+.music-container.play .image-container img{
+    animation-play-state: running;
 }
 
 .navigation{
@@ -133,5 +137,12 @@ body{
     color: rgb(228 123 96 / 80%);
 }
 
- /* Image animation left for cover image */
- /* Add progress bar */
+
+ @keyframes rotate{
+     from{
+         transform: rotate(0deg);
+     }
+     to{
+         transform: rotate(360deg);
+     }
+ }

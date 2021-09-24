@@ -73,16 +73,28 @@ function repeatSong(){
     playSong();
 }
 
+function setProgress(event){
+    // determining the fraction of progress container div covered by CLICK
+
+    const progressFraction = event.offsetX / progressContainer.offsetWidth;
+
+    // Setting progress and play head to that point
+
+    progress.setAttribute('style',`width:${progressFraction * 100}%`);
+    audio.currentTime = progressFraction * audio.duration;
+}
+
 function updateProgress(){
 
     // Finding progress percenatge and timestamp
-    const {duration,currentTime} = audio;
+    let {duration,currentTime} = audio;
+    if(isNaN(duration)){
+        duration = 0;
+    }
     progressPercent = (currentTime / duration) * 100;
 
     const current = formatedTime(currentTime);
     const totalPlaybackTime = formatedTime(duration);
-
-    console.log(`${current}/${totalPlaybackTime}`)
 
     // Setting progress and timer
 
@@ -123,4 +135,8 @@ repeatBtn.addEventListener('click',repeatSong);
 
 audio.addEventListener('timeupdate',updateProgress);
 
+progressContainer.addEventListener('click',setProgress);
+
 audio.addEventListener('ended',nextSong);
+
+// optimize updateProgress Fn
