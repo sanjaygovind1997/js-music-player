@@ -53,7 +53,7 @@ body{
     margin: 10px 0;
     width: 100%;
     height: 4px;
-    background-color: #fff;
+    background-color: #ab788580;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -64,22 +64,36 @@ body{
     width: 0%;
     height: 100%;
     transition: width 0.1s linear;
+    position: relative;
+}
+
+.progress::after{
+    content:"";
+    width: 1rem;
+    height: 1rem;
+    background-color: white;
+    border: solid 1px;
+    border-radius: 50%;
+    position: absolute;
+    left: 100%;
+    transform: translate(-50%,-45%);
 }
 
 .meta-container{
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 #repeat{
     font-size: 0.8rem;
-    margin-left: 5.6rem;
     cursor: pointer;
 }
 
 .timer{
     font-size: 1rem;
     font-weight: bold;
-    float: right;
 }
 
 .image-container{
