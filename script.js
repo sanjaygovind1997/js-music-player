@@ -139,4 +139,5 @@ progressContainer.addEventListener('click',setProgress);
 
 audio.addEventListener('ended',nextSong);
 
+
 // optimize updateProgress Fn
